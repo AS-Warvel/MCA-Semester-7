@@ -1,16 +1,17 @@
-#include "headers/circularQueue.h"
-#include <iostream>
-using namespace std;
+#include "../headers/stack&queses/L_Queue.h"
 
-void assign5Impl()
+void l_queueImpl()
 {
-	CircularQueue<int> q;
+	L_Queue<int> q;
 	int selection;
 	int ele;
 	while (true)
 	{
 		system("cls");
-		cout << "      ***** Assignment 5 - Queues *****\n\n";
+		cout << "      ***** Normal Queue *****\n\n";
+
+		q.print();
+
 		cout << "Select an option:-\n";
 		cout << "1) Add an Element\n";
 		cout << "2) Remove an Element\n";

@@ -122,7 +122,7 @@ public:
 	}
 };
 
-void assign2Impl()
+void polynomialimpl()
 {
 	Polynomial p1;
 	Polynomial p2;

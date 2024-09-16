@@ -127,21 +127,43 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="assignment1.cpp" />
-    <ClCompile Include="assignment4.cpp" />
-    <ClCompile Include="assignment5.cpp" />
-    <ClCompile Include="assignment3.cpp" />
-    <ClCompile Include="assignment2.cpp" />
-    <ClCompile Include="assignment6.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="array.cpp" />
+    <ClCompile Include="infixToPrefix.cpp" />
+    <ClCompile Include="LinkedLists\CDLinkedList.cpp" />
+    <ClCompile Include="LinkedLists\circularLinkedList.cpp" />
+    <ClCompile Include="LinkedLists\linkedListVariant.cpp" />
+    <ClCompile Include="polynomialLinkedLists.cpp" />
+    <ClCompile Include="queues_stacks\circularQueue.cpp" />
+    <ClCompile Include="queues_stacks\L_DEQueue.cpp" />
+    <ClCompile Include="queues_stacks\L_Queue.cpp" />
+    <ClCompile Include="queues_stacks\L_Stack.cpp" />
+    <ClCompile Include="queues_stacks\stack.cpp" />
+    <ClCompile Include="polynomial.cpp" />
+    <ClCompile Include="LinkedLists\linkedListImpl.cpp" />
+    <ClCompile Include="LinkedLists\DLinkedList.cpp" />
+    <ClCompile Include="queues_stacks\DoubleEndedQueue.cpp" />
+    <ClCompile Include="headers\linkedLists\circularDoublyLinkedList.h" />
+    <ClCompile Include="menu_functions\main.cpp" />
+    <ClCompile Include="menu_functions\main_menu.cpp" />
+    <ClCompile Include="queues_stacks\normalQueue.cpp" />
+    <ClCompile Include="palindrome.cpp" />
+    <ClCompile Include="parenthesisMatching.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers\assignImplFxns.h" />
-    <ClInclude Include="headers\circularQueue.h" />
-    <ClInclude Include="headers\DEQueue.h" />
-    <ClInclude Include="headers\linkedList.h" />
-    <ClInclude Include="headers\queue.h" />
-    <ClInclude Include="headers\stack.h" />
+    <ClInclude Include="headers\linkedLists\circularLinkedList.h" />
+    <ClInclude Include="headers\linkedLists\CLL_variant.h" />
+    <ClInclude Include="headers\linkedLists\DL_ListVariant.h" />
+    <ClInclude Include="headers\linkedLists\linkedListVariant.h" />
+    <ClInclude Include="headers\stack&amp;queses\circularQueue.h" />
+    <ClInclude Include="headers\stack&amp;queses\DEQueue.h" />
+    <ClInclude Include="headers\linkedLists\doublyLinkedList.h" />
+    <ClInclude Include="headers\linkedLists\linkedList.h" />
+    <ClInclude Include="headers\stack&amp;queses\L_DEQueue.h" />
+    <ClInclude Include="headers\stack&amp;queses\L_Queue.h" />
+    <ClInclude Include="headers\stack&amp;queses\L_Stack.h" />
+    <ClInclude Include="headers\stack&amp;queses\queue.h" />
+    <ClInclude Include="headers\stack&amp;queses\stack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

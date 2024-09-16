@@ -105,4 +105,15 @@ public:
 		}
 		return c;
 	}
+
+	void display()
+	{
+		cout << "Elements: ";
+		for (int i = 0; i < MAXQUEUE; i++)
+			cout << items[i] << "\t";
+		cout << "\nIndex:    ";
+		for (int i = 0; i < MAXQUEUE; i++)
+			cout << i << "\t";
+		cout << endl;
+	}
 };

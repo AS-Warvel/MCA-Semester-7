@@ -11,18 +11,16 @@ private:
 
 public:
 	bool isEmpty() {
-		if (top == -1)
-		{
-			return true;
-		}
-		return false;
+		return top == -1;
 	}
 
 	bool isFull() {
-		if (top >= max) {
-			return true;
-		}
-		return false;
+		return top == max;
+	}
+
+	void clear()
+	{
+		top = -1;
 	}
 
 	void push(T value) {
@@ -49,5 +47,14 @@ public:
 		}
 		cout << "\nStack Underflow";
 		return NULL;
+	}
+
+	void display()
+	{
+		for (int i = 0; i <= top; i++)
+		{
+			cout << stack[i] << "\t";
+		}
+		cout << endl;
 	}
 };

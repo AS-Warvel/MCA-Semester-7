@@ -308,7 +308,7 @@ int optionSelection() {
 	cin >> selection;
 	return selection;
 }
-void assign1Impl() {
+void arrayInsDelImpl() {
 	const int max_size = 10;
 	int current_size;
 	int arr[max_size];

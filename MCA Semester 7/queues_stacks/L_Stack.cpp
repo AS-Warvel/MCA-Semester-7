@@ -1,15 +1,18 @@
-#include <iostream>
-#include "headers/stack.h"
-using namespace std;
+#include "../headers/stack&queses/L_Stack.h"
 
-void assign3Impl() {
-	Stack<int> stk;
+void l_stackImpl()
+{
+	L_Stack<int> stk;
 	int selection;
 	int ele;
 	while (true)
 	{
 		system("cls");
 		cout << "      ***** Assignment 3 - Stacks *****\n\n";
+		cout << "Stack Elements: ";
+
+		stk.print();
+
 		cout << "Select an option:-\n";
 		cout << "1) Push an Element\n";
 		cout << "2) Pop an Element\n";
@@ -34,7 +37,7 @@ void assign3Impl() {
 		}
 		else if (selection == 3)
 		{
-			cout << "\nElement at Top: " << stk.peep() << endl;
+			cout << "\nElement at Top: " << stk.peak() << endl;
 			system("pause");
 		}
 		else if (selection == 4)

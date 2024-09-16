@@ -15,45 +15,111 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="assignment2.cpp">
+    <ClCompile Include="polynomial.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="assignment1.cpp">
+    <ClCompile Include="array.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="assignment3.cpp">
+    <ClCompile Include="queues_stacks\stack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="menu_functions\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="assignment4.cpp">
+    <ClCompile Include="infixToPrefix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="assignment5.cpp">
+    <ClCompile Include="queues_stacks\circularQueue.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="assignment6.cpp">
+    <ClCompile Include="LinkedLists\linkedListImpl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedLists\DLinkedList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="parenthesisMatching.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="palindrome.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="headers\linkedLists\circularDoublyLinkedList.h">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="menu_functions\main_menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="queues_stacks\normalQueue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="queues_stacks\DoubleEndedQueue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedLists\circularLinkedList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedLists\CDLinkedList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="queues_stacks\L_Queue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="queues_stacks\L_DEQueue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="queues_stacks\L_Stack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedLists\linkedListVariant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="polynomialLinkedLists.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="headers\stack.h">
+    <ClInclude Include="headers\stack&amp;queses\stack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="headers\queue.h">
+    <ClInclude Include="headers\stack&amp;queses\queue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="headers\linkedList.h">
+    <ClInclude Include="headers\linkedLists\linkedList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="headers\assignImplFxns.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="headers\circularQueue.h">
+    <ClInclude Include="headers\stack&amp;queses\circularQueue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="headers\DEQueue.h">
+    <ClInclude Include="headers\stack&amp;queses\DEQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\linkedLists\circularLinkedList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\linkedLists\doublyLinkedList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\stack&amp;queses\L_Queue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\stack&amp;queses\L_DEQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\stack&amp;queses\L_Stack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\linkedLists\linkedListVariant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\linkedLists\CLL_variant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\linkedLists\DL_ListVariant.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

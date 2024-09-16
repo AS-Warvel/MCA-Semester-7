@@ -1,5 +1,5 @@
 #include <iostream>
-#include "headers/stack.h"
+#include "headers/stack&queses/stack.h"
 using namespace std;
 
 int precNo(char c)
@@ -152,14 +152,17 @@ int postFixEval(char postFix[])
 	return s.pop();
 }
 
-void assign4Impl() {
+void infixToPrefixImpl() {
+	system("cls");
+
 	cout << "      ***** Assignment 4 - Infix to Postfix *****\n\n";
+	
 	char postFixExpr[100];
 	char inFixExpr[100];
 	cout << "Enter Infix Expression: ";
 	cin.getline(inFixExpr, 100) >> inFixExpr;
 	inFixToPostFix(inFixExpr, postFixExpr);
-	cout << postFixExpr << endl;
-	cout << postFixEval(postFixExpr) << endl;
+	cout << "Postfix Form - " << postFixExpr << endl;
+	cout << "Evaluation: " << postFixEval(postFixExpr) << endl;
 	system("pause");
 }
