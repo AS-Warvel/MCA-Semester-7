@@ -78,6 +78,21 @@
     <ClCompile Include="polynomialLinkedLists.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="polynomial2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="polynomail_LL2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="headers\linkedLists\sortedLinkedList.h">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedLists\sortedLinkedList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin_search_tree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers\stack&amp;queses\stack.h">
@@ -113,13 +128,19 @@
     <ClInclude Include="headers\stack&amp;queses\L_Stack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="headers\linkedLists\linkedListVariant.h">
+    <ClInclude Include="headers\linkedLists\Variants\linkedListVariant.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="headers\linkedLists\CLL_variant.h">
+    <ClInclude Include="headers\linkedLists\Variants\CLL_variant.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="headers\linkedLists\DL_ListVariant.h">
+    <ClInclude Include="headers\linkedLists\Variants\DL_ListVariant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\linkedLists\Variants\CDLL_Variant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\binary_search_tree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

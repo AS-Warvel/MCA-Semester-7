@@ -128,10 +128,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="array.cpp" />
+    <ClCompile Include="bin_search_tree.cpp" />
+    <ClCompile Include="headers\linkedLists\sortedLinkedList.h" />
     <ClCompile Include="infixToPrefix.cpp" />
     <ClCompile Include="LinkedLists\CDLinkedList.cpp" />
     <ClCompile Include="LinkedLists\circularLinkedList.cpp" />
     <ClCompile Include="LinkedLists\linkedListVariant.cpp" />
+    <ClCompile Include="LinkedLists\sortedLinkedList.cpp" />
+    <ClCompile Include="polynomail_LL2.cpp" />
+    <ClCompile Include="polynomial2.cpp" />
     <ClCompile Include="polynomialLinkedLists.cpp" />
     <ClCompile Include="queues_stacks\circularQueue.cpp" />
     <ClCompile Include="queues_stacks\L_DEQueue.cpp" />
@@ -151,10 +156,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers\assignImplFxns.h" />
+    <ClInclude Include="headers\binary_search_tree.h" />
+    <ClInclude Include="headers\linkedLists\Variants\CDLL_Variant.h" />
     <ClInclude Include="headers\linkedLists\circularLinkedList.h" />
-    <ClInclude Include="headers\linkedLists\CLL_variant.h" />
-    <ClInclude Include="headers\linkedLists\DL_ListVariant.h" />
-    <ClInclude Include="headers\linkedLists\linkedListVariant.h" />
+    <ClInclude Include="headers\linkedLists\Variants\CLL_variant.h" />
+    <ClInclude Include="headers\linkedLists\Variants\DL_ListVariant.h" />
+    <ClInclude Include="headers\linkedLists\Variants\linkedListVariant.h" />
     <ClInclude Include="headers\stack&amp;queses\circularQueue.h" />
     <ClInclude Include="headers\stack&amp;queses\DEQueue.h" />
     <ClInclude Include="headers\linkedLists\doublyLinkedList.h" />

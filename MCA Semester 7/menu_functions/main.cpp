@@ -1,6 +1,11 @@
 #include <iostream>
 #include "../headers/assignImplFxns.h"
 
+struct N {
+	int x;
+	N* n;
+};
+
 using namespace std;
 int main()
 {

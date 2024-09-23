@@ -1,4 +1,4 @@
-#include "headers/stack.h"
+#include "headers/stack&queses/stack.h"
 #include <iostream>
 using namespace std;
 

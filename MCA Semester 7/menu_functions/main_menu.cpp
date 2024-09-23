@@ -14,14 +14,17 @@ void assignmentsMenu()
 		cout << "3) Stack\n";
 		cout << "4) Infix to Prefix\n";
 		cout << "5) Queues\n";
-		cout << "6) LinkedLists\n";
-		cout << "7) End the Program\n";
+		cout << "6) Linked List\n";
+		cout << "7) Sorted Linked Lists\n";
+		cout << "8) Circular Linked List\n";
+		cout << "9) Doubly Linked List\n";
+		cout << "10) End the Program\n";
 		cout << "\nEnter: ";
 		cin >> selection;
 		if (selection == 1)
 			arrayInsDelImpl();
 		else if (selection == 2)
-			polynomialimpl();
+			polynomial2impl();
 		else if (selection == 3)
 			stackImpl();
 		else if (selection == 4)
@@ -31,6 +34,12 @@ void assignmentsMenu()
 		else if (selection == 6)
 			LinkedListImpl();
 		else if (selection == 7)
+			sortedLinkedListImpl();
+		else if (selection == 8)
+			circularLinkedListImpl();
+		else if (selection == 9)
+			doublyLinkedListImpl();
+		else if (selection == 10)
 			break;
 	}
 }
@@ -51,7 +60,9 @@ void allProgramsMenu()
 		cout << "7) Linked Lists\n";
 		cout << "8) Palindrome Check\n";
 		cout << "9) Parenthesis Matching\n";
-		cout << "10) End the Program\n";
+		cout << "10) Polynomial using Linked Lists\n";
+		cout << "11) Binary Search Tree\n";
+		cout << "12) End the Program\n";
 		cout << "\nEnter: ";
 		cin >> selection;
 		if (selection == 1)
@@ -73,6 +84,10 @@ void allProgramsMenu()
 		else if (selection == 9)
 			parenthesisMatching();
 		else if (selection == 10)
+			polynomial_LL_impl();
+		else if (selection == 11)
+			binarySearchTreeImpl();
+		else if (selection == 12)
 			break;
 	}
 }

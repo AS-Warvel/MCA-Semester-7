@@ -1,4 +1,4 @@
-#include "../headers/linkedLists/linkedListVariant.h"
+#include "../headers/linkedLists/Variants/linkedListVariant.h"
 
 void LL_variant()
 {

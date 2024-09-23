@@ -8,7 +8,7 @@ template <typename T> class CircularQueue
 private:
 	int front;
 	int rear;
-	T items[MAXQUEUE];
+	T items[MAXQUEUE] = {0};
 public:
 	CircularQueue()
 	{
@@ -63,5 +63,8 @@ public:
 		for (int i = 0; i < MAXQUEUE; i++)
 			cout << i << "\t";
 		cout << endl;
+		cout << "front: " << front << endl;
+		cout << "rear: " << rear << endl;
+
 	}
 };

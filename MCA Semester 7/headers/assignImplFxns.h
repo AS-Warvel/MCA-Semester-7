@@ -2,9 +2,12 @@
 
 void arrayInsDelImpl();
 void polynomialimpl();
+void polynomial2impl();
 void infixToPrefixImpl();
 void palindromeCheck();
 void parenthesisMatching();
+void polynomial_LL_impl();
+void binarySearchTreeImpl();
 
 void circularQueueImpl();
 void normalQueueImpl();
@@ -18,10 +21,10 @@ void LinkedListImpl();
 void circularLinkedListImpl();
 void doublyLinkedListImpl();
 void CircularDoublyLinkedListImpl();
-
-
-void assignmentsMenu();
-void allProgramsMenu();
+void sortedLinkedListImpl();
 
 void QueuesPrograms();
 void LinkedListPrograms();
+
+void assignmentsMenu();
+void allProgramsMenu();

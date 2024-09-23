@@ -111,7 +111,7 @@ public:
 			cout << "List Underflow!!\n";
 			return NULL;
 		}
-		else if (head->next == head)
+		else if (head->next == nullptr)
 		{
 			T val = head->data;
 			delete head;
@@ -246,12 +246,11 @@ public:
 		Node<T>* temp;
 		curr = head;
 
-		do
-		{
+		while (curr != nullptr) {
 			temp = curr;
 			curr = curr->next;
 			delete temp;
-		} while (curr != nullptr);
+		}
 	}
 
 };

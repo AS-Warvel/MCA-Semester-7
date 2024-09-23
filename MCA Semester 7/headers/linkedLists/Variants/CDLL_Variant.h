@@ -1,22 +1,26 @@
 #pragma once
 #include <iostream>
 using namespace std;
+
 template <typename T> struct Node
 {
 	T data;
 	Node* next;
+	Node* prev;
 };
 
-template <typename T> class CircularLinkedList
+template <typename T> class DoublyLinkedList
 {
 private:
 	Node<T>* head;
+	int size;
 public:
-	CircularLinkedList()
+	DoublyLinkedList()
 	{
 		head = nullptr;
+		size = 0;
 	}
-	~CircularLinkedList()
+	~DoublyLinkedList()
 	{
 		destroy();
 	}
@@ -27,20 +31,18 @@ public:
 		temp->data = val;
 		if (head == nullptr)
 		{
+			temp->next = nullptr;
+			temp->prev = nullptr;
 			head = temp;
-			temp->next = head;
 		}
 		else
 		{
-
-			Node<T>* curr = head;
-			while (curr->next != head)
-				curr = curr->next;
-
-			curr->next = temp;
+			temp->prev = nullptr;
 			temp->next = head;
+			head->prev = temp;
 			head = temp;
 		}
+		size++;
 	}
 
 	void AddATLast(T val)
@@ -53,47 +55,50 @@ public:
 			temp->data = val;
 
 			Node<T>* curr = head;
-			while (curr->next != head)
+			while (curr->next != nullptr)
 				curr = curr->next;
 
 			curr->next = temp;
-			temp->next = head;
+			temp->prev = curr;
+			temp->next = nullptr;
+			size++;
 		}
 	}
 
 	void AddAtpos(int pos, T val)
 	{
-		if (pos == 1)
-			AddAtFirst(val);
-		else
+		if (pos > 0 && pos <= size + 1)
 		{
-			if (head == nullptr || pos <= 0)
+			if (pos == 1)
 			{
-				cout << "Invalid Position!!\n";
+				AddAtFirst(val);
 				return;
 			}
-
-			Node<T>* prev;
 			Node<T>* curr;
-
 			curr = head;
-			prev = curr;
-			for (int i = 0; i < pos - 1; i++)
-			{
-				prev = curr;
+			for (int i = 0; i < pos - 2; i++)
 				curr = curr->next;
-				if (prev == head && i != 0)
-				{
-					cout << "Position out of Range";
-					return;
-				}
-			}
+
 			Node<T>* temp = new Node<T>;
 			temp->data = val;
 
-			prev->next = temp;
-			temp->next = curr;
+			if (curr->next == nullptr)
+			{
+				temp->next = nullptr;
+				temp->prev = curr;
+				curr->next = temp;
+			}
+			else
+			{
+				temp->next = curr->next;
+				temp->prev = curr;
+				curr->next->prev = temp;
+				curr->next = temp;
+			}
+			size++;
 		}
+		else
+			cout << "Postion out of Range\n";
 	}
 
 	T removeAtFirst()
@@ -105,26 +110,22 @@ public:
 		}
 		else if (head->next == head)
 		{
-			T tempData = head->data;
+			T val = head->data;
 			delete head;
 			head = nullptr;
-			return tempData;
+			size--;
+			return val;
 		}
 		else
 		{
 			Node<T>* temp;
-			Node<T>* curr;
-
-			curr = head;
-			while (curr->next != head)
-				curr = curr->next;
-
-			curr->next = head->next;
 			temp = head;
 			head = head->next;
+			head->prev = nullptr;
 
 			T val = temp->data;
 			delete temp;
+			size--;
 			return val;
 		}
 	}
@@ -137,72 +138,66 @@ public:
 			cout << "List is Underflow!!\n";
 			return tempData;
 		}
-		if (head->next == head)
+		if (head->next == nullptr)
 		{
 			tempData = head->data;
 			delete head;
 			head = nullptr;
+			size--;
 			return tempData;
 		}
 		else
 		{
 			Node<T>* curr;
-			Node<T>* prev;
 
 			curr = head;
-			prev = curr;
-			while (curr->next != head)
-			{
-				prev = curr;
+			while (curr->next->next != nullptr)
 				curr = curr->next;
-			}
 
-			prev->next = head;
-			tempData = curr->data;
-			delete curr;
+			tempData = curr->next->data;
+			delete curr->next;
+			curr->next = nullptr;
+			size--;
 			return tempData;
 		}
 	}
 
 	T removeAtPos(int pos)
 	{
-		if (pos <= 0)
-		{
-			cout << "Invalid Position\n";
-			return NULL;
-		}
 		if (head == nullptr)
 		{
 			cout << "List Underflow!!\n";
 			return NULL;
 		}
-		else if (pos == 1)
-			return removeAtFirst();
-		else
+		else if(pos > 0 && pos <= size)
 		{
+			if (pos == 1)
+				return removeAtFirst();
 			Node<T>* curr;
-			Node<T>* prev;
 
 			curr = head;
-			prev = curr;
 			for (int i = 0; i < pos - 1; i++)
-			{
-				prev = curr;
 				curr = curr->next;
-				if (curr == head)
-				{
-					cout << "Position out of Range\n";
-					return NULL;
-				}
+				
+			if (curr->next == nullptr)
+			{
+				curr->prev->next = nullptr;
+				T val = curr->data;
+				delete curr;
+				size--;
+				return val;
 			}
-
-			prev->next = curr->next;
-			T val = curr->data;
-			delete curr;
-			return val;
+			else
+			{
+				curr->prev->next = curr->next;
+				curr->next->prev = curr->prev;
+				T val = curr->data;
+				delete curr;
+				size--;
+				return val;
+			}
 		}
 	}
-
 
 	void print()
 	{
@@ -210,11 +205,10 @@ public:
 		{
 			Node<T>* curr;
 			curr = head;
-			cout << curr->data << "\t";
-			while (curr->next != head)
+			while (curr != nullptr)
 			{
-				curr = curr->next;
 				cout << curr->data << "\t";
+				curr = curr->next;
 			}
 		}
 	}
@@ -224,17 +218,15 @@ public:
 		Node<T>* curr;
 		int i = 0;
 		curr = head;
-		do
+		while (curr != nullptr)
 		{
 			i++;
-			if (curr->data == val) {
+			if (curr->data == val)
 				cout << "value found at " << i << endl;
-				return;
-			}
 			curr = curr->next;
-		} while (curr != head);
-
-		cout << "value not found\n";
+		}
+		if (curr == nullptr)
+			cout << "value not found\n";
 	}
 
 	void destroy()
@@ -248,6 +240,7 @@ public:
 			temp = curr;
 			curr = curr->next;
 			delete temp;
-		} while (curr != head);
+		} while (curr != nullptr);
 	}
+
 };

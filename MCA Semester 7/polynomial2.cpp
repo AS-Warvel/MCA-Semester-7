@@ -1,6 +1,3 @@
-// MCA Semester 7.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 #define MAX_TERMS 50
 
@@ -11,37 +8,22 @@ struct Term {
 	int expo;
 };
 
-class Polynomial {
+class Polynomial2 {
 private:
 	Term terms[MAX_TERMS];
 public:
 	int no_of_terms;
-	
-	Polynomial()
-	{
-		no_of_terms = 0;
-	}
 
-	void clear()
-	{
-		no_of_terms = 0;
-	}
-
-	void addTerm(int coeff, int expo) {
+	void read() {
+		no_of_terms;
+		cout << "Enter no of terms for the Polynomial: ";
+		cin >> no_of_terms;
 		int i;
+
 		for (i = 0; i < no_of_terms; i++)
 		{
-			if (terms[i].expo == expo)
-			{
-				terms[i].coeff += coeff;
-				break;
-			}
-		}
-		if (i >= no_of_terms)
-		{
-			terms[no_of_terms].coeff = coeff;
-			terms[no_of_terms].expo = expo;
-			no_of_terms++;
+			cout << "Enter Coefficient and Exponent: ";
+			cin >> terms[i].coeff >> terms[i].expo;
 		}
 	}
 	void print() {
@@ -62,37 +44,65 @@ public:
 			}
 		}
 	}
-	Polynomial operator+(Polynomial& other)
+	Polynomial2 operator+(Polynomial2& other)
 	{
-		Polynomial p;
+		Polynomial2 p;
 
 		for (int i = 0; i < no_of_terms; i++)
 		{
 			p.terms[i].coeff = terms[i].coeff;
 			p.terms[i].expo = terms[i].expo;
 		}
-		
 		p.no_of_terms = no_of_terms;
+		int j;
 		for (int i = 0; i < other.no_of_terms; i++)
-			p.addTerm(other.terms[i].coeff, other.terms[i].expo);
-		
+		{
+			for (j = 0; j < no_of_terms; j++)
+			{
+				if (other.terms[i].expo == p.terms[j].expo)
+				{
+					p.terms[j].coeff += other.terms[i].coeff;
+					break;
+				}
+			}
+			if (j == no_of_terms)
+			{
+				p.terms[p.no_of_terms].coeff = other.terms[i].coeff;
+				p.terms[p.no_of_terms].expo = other.terms[i].expo;
+				p.no_of_terms++;
+			}
+		}
 		return p;
 	}
 
-	Polynomial operator-(Polynomial& other)
+	Polynomial2 operator-(Polynomial2& other)
 	{
-		Polynomial p;
+		Polynomial2 p;
 
 		for (int i = 0; i < no_of_terms; i++)
 		{
 			p.terms[i].coeff = terms[i].coeff;
 			p.terms[i].expo = terms[i].expo;
 		}
-
 		p.no_of_terms = no_of_terms;
+		int j;
 		for (int i = 0; i < other.no_of_terms; i++)
-			p.addTerm((-1)*other.terms[i].coeff, other.terms[i].expo);
-
+		{
+			for (j = 0; j < no_of_terms; j++)
+			{
+				if (other.terms[i].expo == p.terms[j].expo)
+				{
+					p.terms[j].coeff -= other.terms[i].coeff;
+					break;
+				}
+			}
+			if (j == no_of_terms)
+			{
+				p.terms[p.no_of_terms].coeff = (-1) * other.terms[i].coeff;
+				p.terms[p.no_of_terms].expo = other.terms[i].expo;
+				p.no_of_terms++;
+			}
+		}
 		return p;
 	}
 	int Evaluation(int val)
@@ -106,81 +116,25 @@ public:
 	}
 };
 
-void polynomialimpl()
+void polynomial2impl()
 {
-	Polynomial p1;
-	Polynomial p2;
-	Polynomial p3;
+	Polynomial2 p1;
+	Polynomial2 p2;
+	Polynomial2 p3;
 
-
-	int tempCoeff;
-	int tempExpo;
 	char selection;
 
+	system("cls");
+	cout << "      ***** Assignment 2 - Polynomials *****\n\n";
 	while (true) {
-
-		p1.clear();
-		p2.clear();
-		p3.clear();
-
 		system("cls");
-		cout << "      ***** Assignment 2 - Polynomials *****\n\n";
-		cout << "Enter First Polynomial:- \n";
-		int i = 1;
-		while (true) {
-			cout << "Term " << i << ":- \n";
-			cout << "Coefficient: ";
-			cin >> tempCoeff;
-			cout << "Exponent: ";
-			cin >> tempExpo;
-			p1.addTerm(tempCoeff, tempExpo);
-			while (true)
-			{
-				cout << "Add More Terms[Y/N]: ";
-				cin >> selection;
-				if (selection == 'Y' || selection == 'y')
-				{
-					i++;
-					break;
-				}
-				if (selection == 'N' || selection == 'n')
-					break;
-			}
-			if (selection == 'N' || selection == 'n')
-				break;
-		}
-		system("cls");
-		cout << "First Polynomial: ";
+		cout << "First Polynomial:-\n";
+		p1.read();
 		p1.print();
 		cout << '\n';
 		system("pause");
-		system("cls");
 		cout << "Enter Second Polynomial:- \n";
-
-		i = 1;
-		while (true) {
-
-			cout << "Term " << i << ":- \n";
-			cout << "Coefficient: ";
-			cin >> tempCoeff;
-			cout << "Exponent: ";
-			cin >> tempExpo;
-			p2.addTerm(tempCoeff, tempExpo);
-			while (true)
-			{
-				cout << "Add More Terms[Y/N]: ";
-				cin >> selection;
-				if (selection == 'Y' || selection == 'y')
-				{
-					i++;
-					break;
-				}
-				if (selection == 'N' || selection == 'n')
-					break;
-			}
-			if (selection == 'N' || selection == 'n')
-				break;
-		}
+		p2.read();
 		while (true) {
 			system("cls");
 			cout << "First Polynomial: ";
@@ -216,11 +170,12 @@ void polynomialimpl()
 				{
 					cout << "Enter value for variable: ";
 					cin >> x;
-					cout << endl <<  "Result: " << p3.Evaluation(x) << endl;
+					cout << endl << "Result: " << p3.Evaluation(x) << endl;
 					system("pause");
 				}
 			}
-			else if (selection == 'B' || selection == 'b') {
+			else if (selection == 'B' || selection == 'b')
+			{
 				cout << "\n";
 				p1.print();
 				cout << " - (";
@@ -243,7 +198,8 @@ void polynomialimpl()
 					system("pause");
 				}
 			}
-			else if (selection == 'C' || selection == 'c') {
+			else if (selection == 'C' || selection == 'c')
+			{
 				int x;
 				cout << "Which variable to Evaluate (1/2) : ";
 				cin >> x;
@@ -266,9 +222,7 @@ void polynomialimpl()
 				break;
 			}
 		}
-		if (selection == 'e' || selection == 'E') {
+		if (selection == 'e' || selection == 'E')
 			break;
-		}
-
 	}
 }
