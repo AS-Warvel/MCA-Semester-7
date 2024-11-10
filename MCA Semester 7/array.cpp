@@ -5,9 +5,9 @@ void inputArray(int max_size, int& curr_size, int arr[]) {
 	int user_input_size;
 	while (true) {
 		curr_size = 0;
-		cout << "Enter the no of elements to add into array(max_size = 10): ";
+		cout << "Enter the no of elements to add into array(max_size = " << max_size <<"): ";
 		cin >> user_input_size;
-		if (user_input_size <= 10) {
+		if (user_input_size <= max_size) {
 			for (int i = 0; i < user_input_size; i++) {
 				cout << "Enter element: ";
 				cin >> arr[i];

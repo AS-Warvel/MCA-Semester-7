@@ -16,11 +16,11 @@ void parenthesisMatching()
 		char c = str[i];
 		if (c == '(' || c == '[' || c == '{')
 			stk.push(c);
-		if (c == ')' || c == ']' || c == '}')
+		else if (c == ')' || c == ']' || c == '}')
 		{
 			if (stk.isEmpty())
 			{
-				cout << "Expected Opening Bracket at position " << i + 1 << endl;
+				cout << "No Opening Bracket found for '" << c << "'" << endl;
 				system("pause");
 				return;
 			}

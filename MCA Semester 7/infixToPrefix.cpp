@@ -52,9 +52,9 @@ void inFixToPostFix(char inFix[], char postFix[]) {
 	{
 		if (inFix[i] == '/' || inFix[i] == '*' || inFix[i] == '+' || inFix[i] == '-' || inFix[i] == '^' || inFix[i] == '(')
 		{
-			if (inFix[i] != '(')
+			if(inFix[i] != '(')
 				postFix[++lastIdx] = ' ';
-			if (s.isEmpty())
+			if (s.isEmpty() || inFix[i] == '(')
 				s.push(inFix[i]);
 			else if (precNo(inFix[i]) > precNo(s.peep()))
 				s.push(inFix[i]);
@@ -66,7 +66,6 @@ void inFixToPostFix(char inFix[], char postFix[]) {
 						break;
 					postFix[++lastIdx] = s.pop();
 					postFix[++lastIdx] = ' ';
-
 				}
 				s.push(inFix[i]);
 			}
@@ -96,7 +95,66 @@ void inFixToPostFix(char inFix[], char postFix[]) {
 	postFix[++lastIdx] = '\0';
 }
 
-int postFixEval(char postFix[])
+void inFixToPreFix(char inFix[], char preFix[]) {
+	Stack<char> s;
+	int lastIdx = -1;
+	for (int i = strlen(inFix) - 1; i >= 0; i--)
+	{
+		if (inFix[i] == '/' || inFix[i] == '*' || inFix[i] == '+' || inFix[i] == '-' || inFix[i] == '^' || inFix[i] == ')')
+		{
+			if (inFix[i] != ')')
+				preFix[++lastIdx] = ' ';
+			if (s.isEmpty() || inFix[i] == ')')
+				s.push(inFix[i]);
+			else if (precNo(inFix[i]) > precNo(s.peep()))
+				s.push(inFix[i]);
+			else if (precNo(inFix[i]) < precNo(s.peep()))
+			{
+				while (!s.isEmpty())
+				{
+					if (precNo(inFix[i]) > precNo(s.peep()))
+						break;
+					preFix[++lastIdx] = s.pop();
+					preFix[++lastIdx] = ' ';
+				}
+				s.push(inFix[i]);
+			}
+			else if (precNo(inFix[i]) == precNo(s.peep()))
+			{
+				preFix[++lastIdx] = s.pop();
+				preFix[++lastIdx] = ' ';
+				s.push(inFix[i]);
+			}
+		}
+		else if (inFix[i] == '(')
+		{
+			while (s.peep() != ')') {
+				preFix[++lastIdx] = ' ';
+				preFix[++lastIdx] = s.pop();
+			}
+			s.pop();
+		}
+		else
+			preFix[++lastIdx] = inFix[i];
+	}
+	while (!s.isEmpty()) {
+		preFix[++lastIdx] = ' ';
+		preFix[++lastIdx] = s.pop();
+	}
+	preFix[++lastIdx] = '\0';
+
+	// reversing the string
+	char c;
+	int length = strlen(preFix);
+	for (int i = 0; i < length / 2; i++)
+	{
+		c = preFix[i];
+		preFix[i] = preFix[length - 1 - i];
+		preFix[length - 1 - i] = c;
+	}
+}
+
+float postFixEval(char postFix[])
 {
 	Stack<float> s;
 	float oprand1;
@@ -157,12 +215,15 @@ void infixToPrefixImpl() {
 
 	cout << "      ***** Assignment 4 - Infix to Postfix *****\n\n";
 	
-	char postFixExpr[100];
 	char inFixExpr[100];
+	char postFixExpr[100];
+	char preFixExpr[100];
 	cout << "Enter Infix Expression: ";
 	cin.getline(inFixExpr, 100) >> inFixExpr;
 	inFixToPostFix(inFixExpr, postFixExpr);
+	inFixToPreFix(inFixExpr, preFixExpr);
 	cout << "Postfix Form - " << postFixExpr << endl;
+	cout << "Prefix Form - " << preFixExpr << endl;
 	cout << "Evaluation: " << postFixEval(postFixExpr) << endl;
 	system("pause");
 }

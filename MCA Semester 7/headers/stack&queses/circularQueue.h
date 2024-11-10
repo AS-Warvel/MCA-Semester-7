@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#define MAXQUEUE 7
+#define MAXQUEUE 20
 using namespace std;
 
 template <typename T> class CircularQueue
@@ -14,6 +14,16 @@ public:
 	{
 		front = -1;
 		rear = -1;
+	}
+
+	bool isEmpty()
+	{
+		return front == -1 && rear == -1;
+	}
+
+	bool isFull()
+	{
+		return (rear + 1) % MAXQUEUE == front;
 	}
 
 	void insert(T val)

@@ -22,7 +22,9 @@ void palindromeCheck()
 			cout << "String is not Palindrome\n";
 			break;
 		}
+		i++;
 	}
 	if (stk.isEmpty())
 		cout << "String is Palindrome\n";
+	system("pause");
 }

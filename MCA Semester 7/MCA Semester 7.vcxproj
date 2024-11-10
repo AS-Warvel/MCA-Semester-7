@@ -128,13 +128,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="array.cpp" />
+    <ClCompile Include="AVL_Tree.cpp" />
     <ClCompile Include="bin_search_tree.cpp" />
+    <ClCompile Include="edit_distance.cpp" />
+    <ClCompile Include="linear_probing.cpp" />
+    <ClCompile Include="Sorting\bubble_sort.cpp" />
+    <ClCompile Include="graph.cpp" />
     <ClCompile Include="headers\linkedLists\sortedLinkedList.h" />
+    <ClCompile Include="heap_sort.cpp" />
     <ClCompile Include="infixToPrefix.cpp" />
     <ClCompile Include="LinkedLists\CDLinkedList.cpp" />
     <ClCompile Include="LinkedLists\circularLinkedList.cpp" />
     <ClCompile Include="LinkedLists\linkedListVariant.cpp" />
     <ClCompile Include="LinkedLists\sortedLinkedList.cpp" />
+    <ClCompile Include="loop_detection.cpp" />
     <ClCompile Include="polynomail_LL2.cpp" />
     <ClCompile Include="polynomial2.cpp" />
     <ClCompile Include="polynomialLinkedLists.cpp" />
@@ -153,10 +160,18 @@
     <ClCompile Include="queues_stacks\normalQueue.cpp" />
     <ClCompile Include="palindrome.cpp" />
     <ClCompile Include="parenthesisMatching.cpp" />
+    <ClCompile Include="queue_using_stacks.cpp" />
+    <ClCompile Include="Sorting\insertion_sort.cpp" />
+    <ClCompile Include="Sorting\merge_sort.cpp" />
+    <ClCompile Include="Sorting\quick_sort.cpp" />
+    <ClCompile Include="Sorting\selection_sort.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers\assignImplFxns.h" />
+    <ClInclude Include="headers\AVL_Tree.h" />
     <ClInclude Include="headers\binary_search_tree.h" />
+    <ClInclude Include="headers\graph.h" />
+    <ClInclude Include="headers\hash_table.h" />
     <ClInclude Include="headers\linkedLists\Variants\CDLL_Variant.h" />
     <ClInclude Include="headers\linkedLists\circularLinkedList.h" />
     <ClInclude Include="headers\linkedLists\Variants\CLL_variant.h" />

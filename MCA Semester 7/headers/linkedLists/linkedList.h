@@ -21,6 +21,14 @@ public:
 		destroy();
 	}
 
+	void create(T val)
+	{
+		Node<T>* temp = new Node<T>;
+		temp->data = val;
+		temp->next = nullptr;
+		head = temp;
+	}
+
 	void AddAtFirst(T val)
 	{
 		Node<T>* temp = new Node<T>;
@@ -38,6 +46,7 @@ public:
 			Node<T>* temp = new Node<T>;
 			temp->data = val;
 			temp->next = nullptr;
+			
 			Node<T>* curr = head;
 			while (curr->next != nullptr)
 				curr = curr->next;
@@ -253,7 +262,11 @@ public:
 		{
 			i++;
 			if (curr->data == val)
+			{
 				cout << "value found at " << i << endl;
+				break;
+			}
+			curr = curr->next;
 		}
 		if (curr == nullptr)
 			cout << "value not found\n";

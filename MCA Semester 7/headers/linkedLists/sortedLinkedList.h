@@ -31,7 +31,7 @@ public:
 			temp->next = nullptr;
 			head = temp;
 		}
-		else if(head->data > val)
+		else if (head->data > val)
 		{
 			temp->next = head;
 			head = temp;
@@ -43,15 +43,11 @@ public:
 			while (curr->next != nullptr)
 			{
 				if (curr->next->data > val)
-				{
-					temp->next = curr->next;
-					curr->next = temp;
-					return;
-				}
+					break;
 				curr = curr->next;
 			}
+			temp->next = curr->next;
 			curr->next = temp;
-			temp->next = nullptr;
 		}
 	}
 
@@ -162,7 +158,11 @@ public:
 		{
 			i++;
 			if (curr->data == val)
+			{
 				cout << "value found at " << i << endl;
+				break;
+			}
+			curr = curr->next;
 		}
 		if (curr == nullptr)
 			cout << "value not found\n";

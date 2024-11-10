@@ -1,5 +1,6 @@
 #include <iostream>
 #include "../headers/assignImplFxns.h"
+#include "../headers/graph.h"
 
 struct N {
 	int x;
@@ -9,7 +10,7 @@ struct N {
 using namespace std;
 int main()
 {
-	//assignmentsMenu();
-	allProgramsMenu();
+	assignmentsMenu();
+	//allProgramsMenu();
 	return 0;
 }
